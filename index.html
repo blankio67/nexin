@@ -146,46 +146,72 @@
 
     /* Pricing section */
     .pricing {
+      background: #fff;
       padding: 100px 20px;
       display: flex;
       justify-content: center;
-      background: linear-gradient(180deg, #001133, black);
     }
 
     .card {
-      background: rgba(0, 0, 0, 0.85);
-      border-radius: 20px;
-      padding: 50px;
-      max-width: 420px;
-      text-align: center;
-      color: white;
-      box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.3);
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 400px;
+      text-align: left;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 0px 40px rgba(0, 255, 0, 0.6);
+      transform: translateY(-10px);
+      box-shadow: 0px 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      color: #0057ff;
+      margin-bottom: 10px;
     }
 
     .price {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       font-weight: bold;
-      color: limegreen;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
     }
 
-    .feature {
-      margin: 12px 0;
-      font-size: 1.15rem;
+    .desc {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
     }
 
-    .feature.green {
-      color: limegreen;
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .feature.red {
-      color: #ff4c4c;
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f7f7f7;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .feature-item.green {
+      border-left: 4px solid limegreen;
+    }
+
+    .feature-item.red {
+      border-left: 4px solid #ff4c4c;
+    }
+
+    .feature-item.yellow {
+      border-left: 4px solid #f1c40f;
     }
 
     /* Footer */
@@ -243,12 +269,16 @@
   <!-- Pricing Section -->
   <section class="pricing">
     <div class="card">
+      <h3>Premium</h3>
       <div class="price">$3.99 / month</div>
-      <div class="feature green">✅ Flight Detection</div>
-      <div class="feature green">✅ Speed Detection</div>
-      <div class="feature green">✅ Patches Once Found</div>
-      <div class="feature green">✅ AntiDupe Detections</div>
-      <div class="feature red">❌ No Alt Detections</div>
+      <p class="desc">The best plan for small and medium servers.</p>
+      <div class="feature-list">
+        <div class="feature-item green">✅ Flight Detection</div>
+        <div class="feature-item green">✅ Speed Detection</div>
+        <div class="feature-item green">✅ Patches Once Found</div>
+        <div class="feature-item green">✅ AntiDupe Detections</div>
+        <div class="feature-item red">❌ No Alt Detections</div>
+      </div>
     </div>
   </section>
 
