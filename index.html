@@ -8,70 +8,137 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      color: white;
       background: linear-gradient(180deg, black, #001133);
-      min-height: 100vh;
+      color: #222;
+    }
+
+    /* Navbar */
+    nav {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      overflow-x: hidden;
+      padding: 20px 60px;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    header {
-      text-align: center;
-      padding: 100px 20px;
+    nav .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #000;
     }
 
-    header h1 {
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: #000;
+    }
+
+    /* Hero section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 100px 80px;
+      background: linear-gradient(to right, #f5f5f5, #f8f0ff);
+    }
+
+    .hero-text {
+      max-width: 50%;
+    }
+
+    .hero-text h1 {
       font-size: 3rem;
-      margin-bottom: 10px;
+      margin: 0 0 15px;
+      color: #222;
     }
 
-    header p {
+    .hero-text h1 span {
+      color: #0057ff; /* Blue highlight */
+    }
+
+    .hero-text p {
       font-size: 1.2rem;
-      color: #cccccc;
+      color: #555;
+      margin-bottom: 30px;
     }
 
-    section {
-      margin-top: 80px;
+    .buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn-primary {
+      background: #0057ff;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #003fcc;
+    }
+
+    .btn-secondary {
+      background: #eee;
+      color: #333;
+    }
+
+    .btn-secondary:hover {
+      background: #ddd;
+    }
+
+    .hero-icon {
+      font-size: 150px;
+      color: #000;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Pricing section */
+    .pricing {
+      padding: 80px 20px;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 50px 20px;
+      background: linear-gradient(180deg, #001133, black);
     }
 
     .card {
-      background: rgba(0, 0, 0, 0.8);
-      border-radius: 25px;
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 20px;
       padding: 40px;
       max-width: 400px;
-      box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.3);
       text-align: center;
+      color: white;
+      box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Glossy effect */
-    .card::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.2),
-        rgba(255, 255, 255, 0)
-      );
-      transform: rotate(25deg);
-      animation: shine 4s infinite linear;
-    }
-
-    @keyframes shine {
-      0% { transform: translateX(-100%) rotate(25deg); }
-      100% { transform: translateX(100%) rotate(25deg); }
     }
 
     .card:hover {
@@ -100,12 +167,34 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Nexin AntiCheat</h1>
-    <p>The Worlds Best Anticheat</p>
-  </header>
 
-  <section>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Nexin AntiCheat</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Price</a></li>
+      <li><a href="#">Documentation</a></li>
+      <li><a href="#">Change Log</a></li>
+      <li><a href="#">Q&A</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1><span>Nexin</span> AntiCheat</h1>
+      <p>The World’s Best Anticheat — powerful, configurable, and easy to use</p>
+      <div class="buttons">
+        <a href="#" class="btn-primary">Purchase</a>
+        <a href="#" class="btn-secondary">Web Panel</a>
+      </div>
+    </div>
+    <div class="hero-icon">🛡️</div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing">
     <div class="card">
       <div class="price">$3.99 / month</div>
       <div class="feature green">Flight Detection</div>
@@ -115,5 +204,6 @@
       <div class="feature red">No Alt Detections</div>
     </div>
   </section>
+
 </body>
 </html>
